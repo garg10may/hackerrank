@@ -34,4 +34,4 @@ for _ in range(rows):
     line = set(raw_input())
     result = result & set(line)
 
-print len(result)
+print len(result) 
