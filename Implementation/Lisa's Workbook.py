@@ -20,8 +20,9 @@ for i in problems:
 print problems_page_wise
 
 count = 0
+problem_no = 0
 for page_no, problems in enumerate(problems_page_wise):
-	if page_no <= problems:
+	problem_no += problemsage_no <= problems:
 		count +=1
 
 print count 
