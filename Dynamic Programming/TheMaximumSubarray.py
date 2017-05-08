@@ -57,6 +57,17 @@ def contiguous(x):
             if sum > max:
                 max = sum            
     return max 
+
+#You had a brute force O(n^2) answer previously. Use Kadanes algo
+def contiguous2(x):
+
+    max_till_now = 10^-8
+    for i in range(len(nos)):
+        if max_till_now < 0 : #no use of including it
+            max_till_now = x[i]
+        else:
+            max_till_now = max_till_now + x[i]
+    return max_till_now
     
 def non_contiguous(x):    
     sum = 0
@@ -70,7 +81,9 @@ def non_contiguous(x):
     if status == 0:
         sum = max(nos) #case when all numbers are negative
     return sum
-    
+
+
+
         
 if __name__ == "__main__":
     n = int( raw_input() ) 
@@ -86,6 +99,7 @@ if __name__ == "__main__":
             print nos[0], nos[0]
             
         else:
-            print contiguous(nos),
+            #print contiguous(nos),
+            print contiguous2(nos),
             print non_contiguous(nos)
         
