@@ -59,15 +59,20 @@ def contiguous(x):
     return max 
 
 #You had a brute force O(n^2) answer previously. Use Kadanes algo
+#it's simple and intuitive, you keep track whether the left should be 
+#included or not
 def contiguous2(x):
 
     max_till_now = 10^-8
+    a = []
     for i in range(len(nos)):
         if max_till_now < 0 : #no use of including it
             max_till_now = x[i]
+            a.append(max_till_now)
         else:
             max_till_now = max_till_now + x[i]
-    return max_till_now
+            a.append(max_till_now)
+    return max(a)
     
 def non_contiguous(x):    
     sum = 0
